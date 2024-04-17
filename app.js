@@ -1,50 +1,24 @@
-const role = 'manager';
+const bmvX3Price = 100000;
+const fordFocusPrice = 10000;
+const budget = 20000;
 
-if (role === 'manager') {
-    console.log('Менеджер');
-} else if (role === 'admin') {
-    console.log('Админ');
-} else if (role === 'ceo') {
-    console.log('СЕО');
+/*
+10 > 0 ? console.log('Больше 0') : console.log('Не больше');
+
+if (10 > 0 ) {
+    console.log('Больше 0');
 } else {
-    console.log('Мы тебя не знаем!');
+    console.log('Не больше');
 }
 
-switch (role) {
-    case 'manager': // role === 'manager'
-        console.log('Менеджер');
-        break;
-    case 'admin':
-        console.log('Админ');
-        break;
-    case 'ceo': 
-        console.log('СЕО');
-        break;
-    default:
-        console.log('Мы тебя не знаем!');
-}
+const str = 10 > 0 ? 'Больше 0' : 'Не больше';
+console.log(str);
 
-switch (role) {
-    case 'manager':
-    case 'admin':
-        console.log('Не руководитель');
-        break;
-    case 'ceo': 
-        console.log('Руководитель');
-        break;
-    default:
-        console.log('Мы тебя не знаем!');
-}
+console.log(`Я хочу купить ${budget > bmvX3Price ? 'BMW' : 'Велосипед'}`);
+*/
 
-const num = -1;
+let message = budget > bmvX3Price 
+    ? 'BMW' 
+    : budget > fordFocusPrice ? 'Ford' : 'Велосипед';
 
-switch(true) {
-    case num > 0: // true === num > 0
-        console.log('Положительный');
-        break;
-    case num < 0:
-        console.log('Отрицательный');
-        break;
-    default:
-        console.log('Ноль!');
-}
+console.log(`Я хочу купить ${message}`);
