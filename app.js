@@ -1,24 +1,34 @@
-const bmvX3Price = 100000;
-const fordFocusPrice = 10000;
-const budget = 20000;
-
 /*
-10 > 0 ? console.log('Больше 0') : console.log('Не больше');
-
-if (10 > 0 ) {
-    console.log('Больше 0');
-} else {
-    console.log('Не больше');
-}
-
-const str = 10 > 0 ? 'Больше 0' : 'Не больше';
-console.log(str);
-
-console.log(`Я хочу купить ${budget > bmvX3Price ? 'BMW' : 'Велосипед'}`);
+    Методом prompt получите ответ пользователя 
+    на вопрос "Сколько будет 7 + или - 15?". 
+    Если ответ верен, выведите в консоли "Успех", если нет - "Вы робот!", 
+    а если он введёт "Я не робот", то тоже "Успех".
 */
 
-let message = budget > bmvX3Price 
-    ? 'BMW' 
-    : budget > fordFocusPrice ? 'Ford' : 'Велосипед';
+const q = prompt('Сколько будет 7 + или - 15?');
 
-console.log(`Я хочу купить ${message}`);
+/*
+switch (true) {
+    case q === 'Я не робот':
+    case Number(q) === 22:
+    case Number(q) === -8:
+        console.log('Успех');
+        break;
+    default:
+         console.log('Вы робот!');
+}
+*/
+
+if (q === 'Я не робот') {
+    console.log('Успех');
+} else {
+    const num = Number(q);
+    switch (num) {
+        case 22:
+        case -8:
+            console.log('Успех'); 
+            break;
+        default:
+            console.log('Вы робот!');
+    }
+}
