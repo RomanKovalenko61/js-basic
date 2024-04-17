@@ -53,3 +53,26 @@ let c;
 c = b = 100 + 50;
 console.log(c);
 console.log(b);
+
+// Типы данных
+
+let d = 5;
+let e = 5.6;
+console.log(typeof d);
+console.log(typeof e);
+d = 'строка';
+console.log(typeof d);
+
+let l = 'asdsdf';
+console.log(typeof l);
+
+let isAdmin = false;
+console.log(typeof isAdmin);
+
+let f;
+console.log(typeof f);
+f = 5;
+console.log(typeof f);
+
+let g = null;
+console.log(g == null);
