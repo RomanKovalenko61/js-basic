@@ -1,18 +1,17 @@
-const isAdmin = true;
-const canWrite = true;
+console.log('Вася' || 'Олег');
+console.log(false || 'Олег');
+console.log('Вася' || false);
+console.log(false || false);
 
-console.log(`Системный фаил ${isAdmin && canWrite}`);
-console.log(`Обычный фаил ${isAdmin || canWrite}`);
-console.log(`Инвертируем права админа ${!isAdmin}`);
+console.log('Вася' && 'Олег');
+console.log(false && 'Олег');
+console.log('Вася' && false);
+console.log(false && false);
 
-const isEdited = true;
-const isSuperAdmin = true;
+let a; // let a = 'Марина'
+const userName = a || 'Петя';
+console.log(userName);
 
-console.log(`Системный фаил с редактированием ${
-    isAdmin && canWrite && (!isEdited || isSuperAdmin)
-}`);
-
-let a = 7;
-if (a === -8 || a === 22) {
-
-}
+const isAdmin = false;
+const filename = isAdmin && 'file.mp4';
+console.log(filename);
