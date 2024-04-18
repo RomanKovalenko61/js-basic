@@ -1,17 +1,7 @@
-console.log('Вася' || 'Олег');
-console.log(false || 'Олег');
-console.log('Вася' || false);
-console.log(false || false);
+let username = ''; // let username = 'Вася';
+console.log(username || 'Default username');
+console.log(username ?? 'Default username');
 
-console.log('Вася' && 'Олег');
-console.log(false && 'Олег');
-console.log('Вася' && false);
-console.log(false && false);
-
-let a; // let a = 'Марина'
-const userName = a || 'Петя';
-console.log(userName);
-
-const isAdmin = false;
-const filename = isAdmin && 'file.mp4';
-console.log(filename);
+let age = 0;
+console.log(age || 18);
+console.log(age ?? 18);
