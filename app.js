@@ -19,17 +19,15 @@ function deleteTask(task) {
     if (index === -1) {
         return;
     }
-    tasks.splice(index, 1);
+    return tasks.splice(index, 1);
 }
 
 function priorityTask(task){
-    const index = tasks.indexOf(task);
-    if (index === -1) {
+    const result = deleteTask(task);
+    if (!result) {
         return;
     }
-    const oldTask = tasks[index];
-    tasks.splice(index, 1);
-    tasks.unshift(task);
+    tasks.unshift(result[0]);
 }
 
 addTask('Задача 2');
