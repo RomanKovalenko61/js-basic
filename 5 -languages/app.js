@@ -1,24 +1,22 @@
-// const language = prompt('Введите символы языка. Например ru ua en de pl');
+const language = prompt("Введите язык. Например ru ua en de pl");
 
-const language = navigator.language;
-console.log(language);
-
-switch (true) {
-    case language.includes('ru'):
-        console.log('Привет');
+switch (language.toLowerCase()) {
+    case "ru":
+        console.log("Привет");
         break;
-    case language.includes('uk'):
-        console.log('Доброго ранку');
+    case "uk":
+        console.log("Доброго ранку");
         break;
-    case language.includes('en'):
-        console.log('Hello');
+    case "en":
+        console.log("Hello");
         break;
-    case language.includes('de'):
-        console.log('Gutten tag');
+    case "de":
+        console.log("Gutten tag");
         break;
-    case language.includes('pl'):
-        console.log('Cześć');
+    case "pl":
+        console.log("Cześć");
         break;
     default:
-        console.log('Unknown language!');
+        console.log("Unknown language!");
+        break;
 }
