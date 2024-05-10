@@ -1,16 +1,18 @@
-const operations = [100, -20, 7, -20, 50];
-// const positiveOperations = [];
-// for (const operation of operations) {
-//     if (operation > 0) {
-//         positiveOperations.push(operation);
-//     }
-// }
-// console.log(positiveOperations);
+/*
+    Имеется массив изменения цен prices, где внутри
+    1й элемент массива является ценой в момент Х, 
+    2й - ценой в момент Y.
+    Нужно преобразовать данные в массив, где будут отображены 
+    только положительные изменения цен: [100, 150]
+*/
 
-const positiveOperations = operations.filter((operation) => operation > 0);
-console.log(positiveOperations);
+const prices = [
+    [100, 200],
+    [120, 100],
+    [200, 350],
+];
 
-const positiveOperations2 = operations
-    .filter((operation) => operation > 0)
-    .map((operation) => operation * 60);
-console.log(positiveOperations2);
+const res = prices
+    .map((product) => product[1] - product[0])
+    .filter((price) => price > 0);
+console.log(res);
