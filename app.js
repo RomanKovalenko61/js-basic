@@ -1,15 +1,15 @@
-/*
-    Найти среднее значение последоватедьности 
-    чисел с помощью reduce
-*/
+const arr = [2, 4, 4, 10, 20];
 
-const arr = [1, 4, 4, 10];
-
-const avg = arr.reduce((acc, element, i) => {
-    if (i === arr.length - 1) {
-        return (acc + element) / arr.length;
-    } else {
-        return acc + element;
+let elementGreatherThanFive;
+for (const element of arr) {
+    if (element > 5) {
+        elementGreatherThanFive = element;
+        break;
     }
-}, 0);
-console.log(avg);
+}
+// console.log(elementGreatherThanFive);
+
+elementGreatherThanFive = arr.find((el) => el > 5);
+elementGreatherThanFiveIndex = arr.findIndex((el) => el > 5);
+console.log(elementGreatherThanFive);
+console.log(elementGreatherThanFiveIndex);
