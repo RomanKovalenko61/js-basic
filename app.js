@@ -1,15 +1,15 @@
+/*
+    Написать функцию, которая возвращает true, 
+    если элемент есть, и false, если нет.
+*/
+
 const arr = [2, 4, 4, 10, 20];
 
-let elementGreatherThanFive;
-for (const element of arr) {
-    if (element > 5) {
-        elementGreatherThanFive = element;
-        break;
-    }
+function some(arr, element) {
+    const res = arr.find((el) => el === element);
+    return res == undefined ? false : true;
 }
-// console.log(elementGreatherThanFive);
 
-elementGreatherThanFive = arr.find((el) => el > 5);
-elementGreatherThanFiveIndex = arr.findIndex((el) => el > 5);
-console.log(elementGreatherThanFive);
-console.log(elementGreatherThanFiveIndex);
+console.log(some(arr, 10));
+
+console.log(arr.some((el) => el === 2));
