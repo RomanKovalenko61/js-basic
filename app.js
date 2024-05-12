@@ -1,4 +1,4 @@
-const film = "Звездные войны";
-console.log(film.padStart(50, "*"));
-console.log(film.padEnd(50, "*"));
-console.log(film.repeat(10));
+/* Замаскировать все, кроме последнмх 4-х символов */
+const card = "2342834503458353";
+/* ************8353 */
+console.log(card.slice(-4).padStart(16, "*"));
