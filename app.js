@@ -1,9 +1,27 @@
-/* отсортировать пользователей по возрасту */
+/* преобразовать пользователей до вида 
+    { fullName: 'Вася Пупкин', skillNum: 2}
+*/
 
 const users = [
-    { name: "Вася", age: 30 },
-    { name: "Катя", age: 18 },
-    { name: "Аня", age: 40 },
-    { name: "Петя", age: 25 },
+    {
+        name: "Вася",
+        surname: "Пупкин",
+        age: 30,
+        skills: ["Программирование", "DevOps"],
+    },
+    {
+        name: "Катя",
+        surname: "Белова",
+        age: 18,
+        skills: ["Дизайн"],
+    },
 ];
-console.log(users.sort((o1, o2) => o1.age - o2.age));
+
+console.log(
+    users.map((obj) => {
+        return {
+            fullName: `${obj.name} ${obj.surname}`,
+            skillNum: obj.skills.length,
+        };
+    })
+);
