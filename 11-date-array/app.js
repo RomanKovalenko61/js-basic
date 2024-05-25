@@ -9,12 +9,13 @@ const arr = [
     "30-02-2020",
     "02/29/1923",
     "02/29/1924",
+    "05/31/44",
 ];
 // ['10-02-2022', '12-11-2023']
 
 //https://stackoverflow.com/questions/7388001/javascript-regex-to-validate-date-format
 function validDate(str) {
-    let dateReg = /^\d{2}([./-])\d{2}\1\d{4}$/;
+    let dateReg = /^\d{2}([./-])\d{2}\1\d{2,4}$/;
     if (str.match(dateReg)) {
         let day, month, year;
         switch (true) {

@@ -1,7 +1,7 @@
 const arr = [3, 6, 9, 2];
 //const arr2 = arr.slice();
 
-const isGreaterThanFive = (el) => (el > 5 ? true : false);
+const isGreaterThanFive = (el) => el > 5;
 
 function filter(arr, fn) {
     for (let i = 0; i < arr.length; i++) {
