@@ -1,27 +1,9 @@
-const user = {
-    name: "Vasya",
-    surname: "Pupkin",
-    age: 24,
-    skills: ["Programming", "Cooking"],
-    eduBasic: "School 10",
-    eduPro: "MFTI",
-};
+/* отсортировать пользователей по возрасту */
 
-console.log(user);
-console.log(user.name);
-console.log(user.skills[0]);
-
-console.log(user["skills"]);
-
-const level = "Pro";
-console.log(user["edu" + level]);
-
-// const res = prompt("Введите свойство");
-// console.log(user[res]);
-
-user["city"] = "Москва";
-console.log(user);
-
-user.age = 30;
-user["age"] = 40;
-console.log(user);
+const users = [
+    { name: "Вася", age: 30 },
+    { name: "Катя", age: 18 },
+    { name: "Аня", age: 40 },
+    { name: "Петя", age: 25 },
+];
+console.log(users.sort((o1, o2) => o1.age - o2.age));
