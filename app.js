@@ -1,4 +1,10 @@
-/* Замаскировать все, кроме последнмх 4-х символов */
-const card = "2342834503458353";
-/* ************8353 */
-console.log(card.slice(-4).padStart(16, "*"));
+const userArray = ["VAsya", "Pupkin", 24];
+const user = {
+    name: "Vasya",
+    surname: "Pupkin",
+    age: 24,
+    skills: ["Programming", "Cooking"],
+    1: 1,
+};
+
+console.log(user);
