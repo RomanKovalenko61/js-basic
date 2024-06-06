@@ -5,12 +5,7 @@ const toDoList = {
     list: [],
     addTask: function (title, priority) {
         const id = this.id++;
-        const task = {
-            title,
-            id,
-            priority,
-        };
-        this.list.push(task);
+        this.list.push({ title, id, priority });
     },
     findIndexToArray: function (id) {
         return this.list.findIndex((el) => el.id === id);
@@ -18,7 +13,6 @@ const toDoList = {
     getTask: function (id) {
         const index = this.findIndexToArray(id);
         if (index != -1) {
-            console.log(`Найден элемент с индексом ${index}`);
             return this.list[index];
         }
     },
@@ -26,25 +20,44 @@ const toDoList = {
         const index = this.findIndexToArray(id);
         if (index != -1) {
             this.list[index] = { title, id, priority };
-            console.log(`Обновлен элемент с индексом ${index}`);
         }
     },
     deleteTask: function (id) {
         const index = this.findIndexToArray(id);
         if (index != -1) {
             this.list.splice(index, 1);
-            console.log(`Удален элемент с индексом ${index}`);
         }
     },
     getList: function () {
         return this.list;
     },
+    getSortedListById: function (desk = false) {
+        const arr = this.list.slice();
+        if (desk) {
+            return arr.sort((el1, el2) => el2.id - el1.id);
+        } else {
+            return arr.sort((el1, el2) => el1.id - el2.id);
+        }
+    },
+    getSortedListByPriority: function (desk = false) {
+        const arr = this.list.slice();
+        if (desk) {
+            return arr.sort((el1, el2) => el2.priority - el1.priority);
+        } else {
+            return arr.sort((el1, el2) => el1.priority - el2.priority);
+        }
+    },
 };
 
 console.log(toDoList.getList());
-toDoList.addTask("Помыть посуду", 1);
-toDoList.addTask("Написать CRUD", 5);
-console.log(toDoList.getList());
-toDoList.updateTask(10000, "Помыть кота", 10);
+toDoList.addTask("Посмотреть смешные видосы", 2);
+toDoList.addTask("Помыть посуду", 3);
+toDoList.addTask("Написать CRUD", 12);
+toDoList.addTask("Покормить кота", 10);
 console.log(toDoList.getTask(10001));
-console.log(toDoList.getList());
+console.log(toDoList.getTask(999));
+
+// console.log(toDoList.getSortedListById());
+// console.log(toDoList.getSortedListById(true));
+// console.log(toDoList.getSortedListByPriority());
+// console.log(toDoList.getSortedListByPriority(true));
