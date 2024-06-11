@@ -3,34 +3,24 @@
 const audi = {
     make: "Audi",
     model: "A3",
-    year: 2021,
     damages: [],
+};
+
+const carManipulation = {
     addDamage(part, rate) {
-        console.log(
-            `У авто ${this.make} ${this.model} ${this.year} добавлено: повреждение ${part} со степенью ${rate}`
-        );
         this.damages.push({
             part,
             rate,
         });
+        console.log(`Добавить повреждение на ${this.make} ${this.model}`);
     },
 };
-// audi.addDamage("Капот", 1);
 
-const bmw = {
-    make: "BMW",
-    model: "X5",
-    year: 2022,
-    damages: [],
-};
+const addDamageAudi = carManipulation.addDamage.bind(audi);
+addDamageAudi("Крыло", 3);
+console.log(audi);
 
-bmw.addDamage = audi.addDamage;
-// bmw.addDamage("Бампер", 2);
-
-const addDamageFunction = audi.addDamage;
-// addDamageFunction("Бампер", 2);
-addDamageFunction.call(bmw, ...["Бампер", 2]);
-addDamageFunction.call(audi, "Бампер", 2);
-
-addDamageFunction.apply(bmw, ["Бампер", 2]);
-addDamageFunction.apply(audi, ["Бампер", 2]);
+const addDamageAudiFoof = carManipulation.addDamage.bind(audi, "Крыша");
+addDamageAudiFoof(5);
+addDamageAudiFoof(3);
+console.log(audi);
