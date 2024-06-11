@@ -23,5 +23,11 @@ function createQueryAlt(obj) {
     return query.slice(0, -1);
 }
 
+const createQueryLambda = (params) =>
+    Object.entries(params)
+        .map(([key, value]) => `${key}=${value}`)
+        .join("&");
+console.log(createQueryLambda(obj));
+
 console.log(createQuery(obj));
 console.log(createQueryAlt(obj));
