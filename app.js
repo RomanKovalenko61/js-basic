@@ -1,10 +1,11 @@
 "use strict";
 
-const panelText = "Панель";
-const panelClass = "button";
-const newElement = document.createElement("div");
-newElement.setAttribute("user-id", 1);
-// newElement.classList.add("panel");
-// newElement.innerText = "Кнопка";
-newElement.innerHTML = `<button class="${panelClass}">${panelText}</button>`;
-document.querySelector(".test").appendChild(newElement);
+localStorage.setItem("token", "asdsafafa");
+localStorage.setItem("token1", 4);
+localStorage.setItem("token2", true);
+
+const token2 = localStorage.getItem("token2");
+console.log(typeof token2);
+
+localStorage.removeItem("token2");
+localStorage.clear();
