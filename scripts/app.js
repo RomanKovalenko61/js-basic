@@ -78,10 +78,10 @@ function rerenderContent(activeHabbit) {
                 <div class="habbit__comment">${
                     activeHabbit.days[index].comment
                 }</div>
-                <button class="habbit__delete">
+                <button class="habbit__delete" onclick=deleteDay(${index})>
                     <img src="./images/delete.svg" alt="Удалить день ${
                         Number(index) + 1
-                    }" />
+                    }"/>
                 </button>`;
         page.content.daysContainer.appendChild(element);
     }
@@ -119,6 +119,21 @@ function addDays(event) {
         return habbit;
     });
     form["comment"].value = "";
+    rerender(globalActiveHAbbitId);
+    saveData();
+}
+
+function deleteDay(index) {
+    habbits = habbits.map((habbit) => {
+        if (habbit.id === globalActiveHAbbitId) {
+            habbit.days.splice(index, 1);
+            return {
+                ...habbit,
+                days: habbit.days,
+            };
+        }
+        return habbit;
+    });
     rerender(globalActiveHAbbitId);
     saveData();
 }
